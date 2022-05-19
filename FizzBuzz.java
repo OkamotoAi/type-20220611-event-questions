@@ -7,7 +7,6 @@ class Main {
       // ここから記述
       if(i % 3 == 0) str += "Fizz";
       if(i % 5 == 0) str += "Buzz";
-      
       if(str.isEmpty()) str = String.valueOf(i);
 
 

@@ -15,6 +15,28 @@ class Main {
 
     // ここから記述
 
+    int min = 0;
+    int max = sortedArray.length-1;
+    int mid;
+    
+    while(min+1 != max){
+      mid = (max+min) / 2;
+      System.out.println(mid);
+      if(sortedArray[mid] == targetNumber){
+        return mid;
+      }else if(sortedArray[mid] > targetNumber){
+        //小さい側を調べる
+        max = mid;
+        
+      }else if(sortedArray[mid] < targetNumber){
+        //大きい側を調べる
+        min = mid;
+      }
+    }
+    
+    if(sortedArray[min] == targetNumber) return min;
+    if(sortedArray[max] == targetNumber) return max;
+
 
     // ここまで記述
 
