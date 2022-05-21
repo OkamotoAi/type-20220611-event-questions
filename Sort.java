@@ -23,7 +23,7 @@ class Main {
 
     // ここから記述
 
-    //pivot以上，未満の値を格納
+    //見つかったpivot以上，未満の入れ替え対象の値を格納
     int front = -1;
     int back = -1;
     
@@ -50,7 +50,6 @@ class Main {
       
       //両方見つかった時
       if(front != -1 && back != -1){
-        System.out.printf("%d %d\n", f,b);
         //f,bの入れ替え
         tmp = array[f];
         array[f] = array[b];
@@ -58,7 +57,6 @@ class Main {
         
         front = -1;
         back = -1;
-        
       }
     }
     

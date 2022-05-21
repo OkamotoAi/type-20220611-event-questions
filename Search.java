@@ -15,28 +15,32 @@ class Main {
 
     // ここから記述
 
+    //探索範囲の左端，右端，中間のインデックス
     int min = 0;
     int max = sortedArray.length-1;
     int mid;
-    
+
+    //minとmaxがぶつかるまで繰り返す
     while(min+1 != max){
       mid = (max+min) / 2;
-      System.out.println(mid);
+
       if(sortedArray[mid] == targetNumber){
+        //見つかった
         return mid;
+
       }else if(sortedArray[mid] > targetNumber){
-        //小さい側を調べる
-        max = mid;
-        
+        //中間の値が探索対象より大きい時，中間より小さい側を調べる
+      max = mid;
+
       }else if(sortedArray[mid] < targetNumber){
-        //大きい側を調べる
+        //中間の値が探索対象より小さい時，中間より大きい側を調べる
         min = mid;
       }
     }
-    
+
+    //ぶつかった時に左端，右端が探索されないため
     if(sortedArray[min] == targetNumber) return min;
     if(sortedArray[max] == targetNumber) return max;
-
 
     // ここまで記述
 
